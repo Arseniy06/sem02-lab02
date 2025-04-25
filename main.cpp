@@ -1,6 +1,3 @@
-#ifndef INCLUDE_STRING_HPP_
-#define INCLUDE_STRING_HPP_
-
 #include <cstddef>
 #include <iostream>
 #include <cstring>
@@ -84,7 +81,7 @@ public:
         return strcmp(Data, rhs.Data) < 0;
     }
 
-    size_t Find(const String& substr) const {
+    int Find(const String& substr) const {
         if (substr.Empty() || Empty()) return -1;
         const char* pos = strstr(Data, substr.Data);
         return pos ? pos - Data : -1;
